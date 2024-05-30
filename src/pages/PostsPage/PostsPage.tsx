@@ -1,4 +1,3 @@
-import { getAllPosts } from '../../services/post-services';
 import PostList from '../../components/PostList/PostList';
 import { Suspense } from 'react';
 

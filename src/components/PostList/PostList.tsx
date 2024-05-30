@@ -1,16 +1,14 @@
 'use client';
 import { use } from 'react';
-import { PostResponse, getAllPosts } from '../../services/post-services';
+import { getAllPosts } from '../../services/post-services';
 import Post from '../Post/Post';
+import styles from './PostList.module.scss';
 
-interface PostListProps {
-  postsPromise: Promise<PostResponse[]>;
-}
 const PostList = () => {
   const posts = use(getAllPosts());
   console.log(posts);
   return (
-    <section>
+    <section className={styles.container}>
       {posts.map((post) => (
         <Post key={post.id} post={post} />
       ))}
