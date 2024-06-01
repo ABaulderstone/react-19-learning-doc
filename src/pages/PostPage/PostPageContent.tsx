@@ -22,6 +22,7 @@ const PostPageContent = ({ postPromise }: PostPageContentProps) => {
   );
 
   useEffect(() => {
+    // needs to be in startTransition because an action isn't causing it
     startTransition(() => {
       // set the optomisticPost to this new value. viewcount incremented by 1
       setOptimitisticPost({ ...postState, views: postState.views + 1 });
