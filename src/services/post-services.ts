@@ -16,3 +16,14 @@ export const getPostById = async (id: string | undefined) => {
   }
   return (await response.json()) as PostResponse;
 };
+
+export const updateViewCount = async (post: PostResponse) => {
+  const response = await fetch('http://localhost:3000/posts/' + post.id, {
+    method: 'PATCH',
+    body: JSON.stringify({ views: post.views + 1 }),
+  });
+  if (!response.ok) {
+    throw new Error('Failed to update post');
+  }
+  return (await response.json()) as PostResponse;
+};

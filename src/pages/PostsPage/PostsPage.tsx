@@ -1,8 +1,10 @@
 import PostList from '../../components/PostList/PostList';
 import { Suspense } from 'react';
+import { getAllPosts } from '../../services/post-services';
 
 const PostsPage = () => {
-  //   const postsPromise = getAllPosts();
+  // Construct the promise on the server component and pass that down into the client component
+  const postsPromise = getAllPosts();
 
   return (
     <>
@@ -14,7 +16,7 @@ const PostsPage = () => {
       />
       {/* Because PostList is doing a fetch we need to wrap it in a suspense. What to render while waiting */}
       <Suspense fallback='loading...'>
-        <PostList />;
+        <PostList postsPromise={postsPromise} />;
       </Suspense>
     </>
   );
