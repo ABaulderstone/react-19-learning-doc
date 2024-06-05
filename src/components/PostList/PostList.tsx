@@ -44,6 +44,7 @@ const PostList = ({ postsPromise }: PostListProps) => {
   };
   const createPost = (data: PostFormData) => {
     setPostError(null);
+    // this should add post optimisticly but doesn't
     startTransition(() => {
       optimisticAddPost(data);
       closeCreateModal();
@@ -54,6 +55,7 @@ const PostList = ({ postsPromise }: PostListProps) => {
   };
 
   const deletePost = (post: PostResponse) => {
+    // This should delete local first then wait for response but doesn't
     startTransition(() => {
       setOptimisticPosts({ type: 'DELETE', data: post });
     });
@@ -77,6 +79,7 @@ const PostList = ({ postsPromise }: PostListProps) => {
           <Post key={post.id} post={post} onDelete={deletePost} />
         ))}
       </section>
+
       <Modal isOpen={createModalOpen} onClose={closeCreateModal}>
         <section
           style={{ display: 'flex', flexDirection: 'column', gap: '0.25em' }}
