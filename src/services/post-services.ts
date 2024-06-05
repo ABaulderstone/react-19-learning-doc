@@ -37,6 +37,7 @@ export const updateViewCount = async (post: PostResponse) => {
 };
 
 export const createNewPost = async (postData: PostFormData) => {
+  await wait(3000);
   if (postData.title.length < 5) {
     throw new Error('Title must be at least 5 characters');
   }

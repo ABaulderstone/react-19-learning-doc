@@ -25,8 +25,11 @@ const PostPageContent = ({ postPromise }: PostPageContentProps) => {
     // needs to be in startTransition because an action isn't causing it
     startTransition(() => {
       // set the optimisticPost to this new value. viewcount incremented by 1
-      console.log('running first');
-      setOptimitisticPost({ ...postState, views: postState.views + 1 });
+      console.log('running first', optimisticPost);
+      const views = postState.views + 1;
+      console.log(views);
+      setOptimitisticPost({ ...postState, views });
+      console.log(optimisticPost);
     });
 
     updateViewCount(post).then((newPost) => {
@@ -34,6 +37,7 @@ const PostPageContent = ({ postPromise }: PostPageContentProps) => {
       setPostState(newPost);
     });
   }, []);
+  console.log('Optimistic', optimisticPost);
   return (
     <>
       <title>{optimisticPost.title}</title>
