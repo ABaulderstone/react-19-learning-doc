@@ -1,18 +1,6 @@
 {
   "posts": [
     {
-      "id": "1",
-      "title": "Lorem ipsum dolor sit amet",
-      "views": 157,
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec purus at sem ultricies condimentum nec at purus. Maecenas ut malesuada est, sit amet pellentesque nulla. Cras bibendum, nisi nec venenatis ullamcorper, lacus justo vehicula erat, nec lobortis turpis metus at libero. Nulla facilisi. Sed vulputate malesuada mi in convallis."
-    },
-    {
-      "id": "2",
-      "title": "Consectetur adipiscing elit",
-      "views": 245,
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra justo at quam posuere, nec fermentum massa scelerisque. Integer quis massa in arcu cursus ullamcorper. Curabitur accumsan, libero at ullamcorper tincidunt, turpis ligula interdum felis, ac aliquam ipsum ligula at est. Donec quis tortor ut erat ultrices bibendum. Integer malesuada, nunc nec suscipit pharetra, arcu felis commodo dui, eu tincidunt turpis enim et justo. Ut dictum euismod magna, et venenatis nisl viverra et. Nunc vestibulum, metus ut interdum sagittis, erat purus egestas nisl, sit amet sagittis dolor mi non risus. Phasellus scelerisque eros in dui hendrerit, nec feugiat libero elementum. Quisque at lectus vitae turpis lacinia commodo. In ut massa eget dui pellentesque condimentum. Ut vitae orci at nunc egestas vehicula. Sed consequat, mi eget cursus aliquet, nisl justo tempor dolor, a lacinia lacus est sit amet dui. Vivamus fermentum quam sed ligula ultricies, ac tincidunt nisi ultrices. Nulla facilisi."
-    },
-    {
       "id": "3",
       "title": "Sed do eiusmod tempor",
       "views": 200,

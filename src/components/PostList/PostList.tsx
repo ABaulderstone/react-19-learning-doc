@@ -3,6 +3,7 @@ import { startTransition, use, useOptimistic, useState } from 'react';
 import {
   PostResponse,
   createNewPost,
+  deletePostById,
   getAllPosts,
 } from '../../services/post-services';
 import Post from '../Post/Post';
@@ -51,6 +52,16 @@ const PostList = ({ postsPromise }: PostListProps) => {
       .then((newPost) => setPosts([newPost, ...posts]))
       .catch(setPostError);
   };
+
+  const deletePost = (post: PostResponse) => {
+    startTransition(() => {
+      setOptimisticPosts({ type: 'DELETE', data: post });
+    });
+    deletePostById(post.id).then(() => {
+      const filtered = posts.filter((p) => p.id !== post.id);
+      setPosts(filtered);
+    });
+  };
   return (
     <>
       <section>
@@ -63,7 +74,7 @@ const PostList = ({ postsPromise }: PostListProps) => {
       </section>
       <section className={styles.container}>
         {optimisticPosts.map((post) => (
-          <Post key={post.id} post={post} />
+          <Post key={post.id} post={post} onDelete={deletePost} />
         ))}
       </section>
       <Modal isOpen={createModalOpen} onClose={closeCreateModal}>
