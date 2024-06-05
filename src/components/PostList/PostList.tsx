@@ -62,7 +62,7 @@ const PostList = ({ postsPromise }: PostListProps) => {
         )}
       </section>
       <section className={styles.container}>
-        {posts.map((post) => (
+        {optimisticPosts.map((post) => (
           <Post key={post.id} post={post} />
         ))}
       </section>
