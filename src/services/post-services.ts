@@ -6,6 +6,11 @@ export interface PostResponse {
   content: string;
   views: number;
 }
+
+// artificial wait function to show optimistic better
+const wait = async (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms));
+
 export const getAllPosts = async () => {
   const response = await fetch('http://localhost:3000/posts');
   return (await response.json()) as PostResponse[];
@@ -20,6 +25,7 @@ export const getPostById = async (id: string | undefined) => {
 };
 
 export const updateViewCount = async (post: PostResponse) => {
+  await wait(3000);
   const response = await fetch('http://localhost:3000/posts/' + post.id, {
     method: 'PATCH',
     body: JSON.stringify({ views: post.views + 1 }),

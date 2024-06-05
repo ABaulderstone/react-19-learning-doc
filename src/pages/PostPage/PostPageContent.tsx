@@ -17,20 +17,21 @@ const PostPageContent = ({ postPromise }: PostPageContentProps) => {
   // tie optimisticPost to post state. If that updates so will it
   const [optimisticPost, setOptimitisticPost] = useOptimistic(
     postState,
-    // explain what to set optomisticPost to when we call setOptomisticPost
+    // explain what to set optimisticPost to when we call setOptimisticPost
     (_, updatedPost: PostResponse) => updatedPost
   );
 
   useEffect(() => {
     // needs to be in startTransition because an action isn't causing it
     startTransition(() => {
-      // set the optomisticPost to this new value. viewcount incremented by 1
+      // set the optimisticPost to this new value. viewcount incremented by 1
+      console.log('running first');
       setOptimitisticPost({ ...postState, views: postState.views + 1 });
-      // then actually update the viewcount
-      updateViewCount(postState).then((res) => {
-        // at some point this will change the actual state
-        setPostState(res);
-      });
+    });
+
+    updateViewCount(post).then((newPost) => {
+      console.log('Running second');
+      setPostState(newPost);
     });
   }, []);
   return (

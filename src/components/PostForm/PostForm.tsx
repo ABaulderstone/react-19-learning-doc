@@ -1,5 +1,3 @@
-import { useActionState, useRef } from 'react';
-
 interface PostFormProps {
   buttonText: string;
   onSubmit: (data: PostFormData) => unknown;
@@ -23,7 +21,6 @@ const PostForm = ({
       [PostFormData, FormDataEntryValue]
     >;
     const data = Object.fromEntries(formData) as PostFormData;
-
     onSubmit(data);
   };
   return (
@@ -38,7 +35,7 @@ const PostForm = ({
         />
       </div>
       <div>
-        <label htmlFor='content'>Title</label>
+        <label htmlFor='content'>Content</label>
         <textarea
           id='content'
           name='content'
